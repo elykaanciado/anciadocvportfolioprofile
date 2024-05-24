@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Checker</title>
+    <link rel="stylesheet" href="style_anciado.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Age Checker</h1>
+        <p>Enter the age of your favorite artist, and we'll compare it to Google's age.</p>
+        <input type="number" id="Age" value="Enter Age">
+        <button onclick="Function()">Enter</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        // declaration of "Function"
+        function Function() {
+            //Get the value "Age" which is the user input
+            var age = document.getElementById("Age").value;
+
+            // Declare a variable named "description"
+            var description; 
+
+             // If the value of "age" is less than 25
+            if (age < 25) {
+                // If the age is below 25, the program writes, “They’re [age] old and they’re younger than Google”.
+                description = " years old and they're younger than Google."; // Set the value of the "description" variable to the appropriate string
+             // If the value of "age" is greater than 25
+            } else if (age > 25) {
+                 // • If the age is above 25, the program alerts “They’re [age] and they’re older than Google”.
+                description = " years old and they're older than Google."; // Set the value of the "description" variable to the appropriate string
+             // If the value of "age" is equal to 25
+            } else if (age == 25) {
+                // If the age is also 25, the program writes, “They’re [age] and they’re as old as Google”.
+                description = " years old and they're as old as Google."; // Set the value of the "description" variable to the appropriate string
+            } else {
+                // madidisplay ang error
+                alert(age + " is invalid input. ");
+            }
+
+            // Display result:
+            document.getElementById("result").innerHTML = "They're " + age + description;
+        }
+    </script>
+</body>
+</html>
